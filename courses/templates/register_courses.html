@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Registration Form</title>
+
+</head>
+
+<body>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        body {
+            background-color: #233;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: purple;
+        }
+        
+        input {
+            width: 100%;
+            outline: none;
+            border: 2px solid;
+            font-size: 12px;
+            padding: 8px 8px;
+            border-radius: 2px;
+        }
+        
+        select {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 3px;
+            transition: all 0.3;
+        }
+        
+        .wrapper {
+            max-width: 500px;
+            width: 80%;
+            background: wheat;
+            margin: 20px auto;
+            padding: 30px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 100);
+        }
+        
+        .wrapper.form.inputfield {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .wrapper.wrapper.form.input_field label {
+            width: 600px;
+            /* color: blueviolet; */
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        button {
+            background-color: rgb(194, 149, 194);
+            top: 30px;
+            height: 50px;
+            width: 50%;
+            border-radius: 15px;
+            align-items: center;
+            font-size: 1.4rem;
+            margin-left: 258px;
+        }
+        
+        .pic {
+            background-size: contain;
+            width: 80%;
+            text-align: center;
+            /* height: 150px; */
+        }
+        
+        button:hover {
+            color: wheat;
+            background-color: purple;
+            cursor: pointer;
+        }
+    </style>
+    <div class="wrapper">
+        <div class="form">
+            <form method="POST">
+                <!-- {%csrf_token%} -->
+                <h1>Courses Registration Form</h1>
+                {%csrf_token%} {{form.as_p}}
+                <button>Submit</button>
+                <!-- <input type="submit" value="Submit"> -->
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

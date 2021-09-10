@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+</head>
+
+<body>
+    <div class="profile">
+        <img src="{{ student.image.url}}">
+        <h2>{{ student.full_name }}</h2>
+        <h2>{{ student.age }} years old</h2>
+        <h2>{{ student.gender }}</h2>
+        <h2>{{ student.country }}</h2>
+        <h2>{{ student.language }}</h2>
+    </div>
+    <style>
+        .profile {
+            border: 1px;
+            border-radius: 10px;
+            box-shadow: blueviolet;
+            height: 530px;
+            width: 400px;
+            margin-left: 500px;
+            text-align: center;
+            background-color: rgb(243, 212, 243);
+        }
+        
+        img {
+            padding-top: 10px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        
+        h2 {
+            font-size: 20px;
+        }
+    </style>
+</body>
+
+</html>

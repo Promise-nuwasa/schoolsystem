@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calender</title>
+</head>
+
+<body>
+    <!-- <h1> CodeHive Calender</h1> -->
+    {% block content %}
+    <div class="clearfix">
+        <a class=" btn-info-left" href="{ % url 'cal:calendar' % }?{{ prev_month }}"> Previous Month </a>
+        <a class=" btn-info-right" href="{ % url 'cal:calendar' % }?{{ next_month }}"> Next Month </a>
+    </div>
+    {{ calendar }} {% endblock %}
+    <style>
+        .btn-info-left {
+            border: 1px solid purple;
+            padding: 5px;
+            text-decoration: none;
+        }
+        
+        .btn-info-right {
+            border: 1px solid purple;
+            padding: 5px;
+            text-decoration: none;
+        }
+        
+        .btn-info-right:hover {
+            background-color: rgb(228, 68, 228);
+        }
+        
+        .btn-info-left:hover {
+            background-color: rgb(228, 68, 228);
+        }
+        
+        .clearfix {
+            text-align: right;
+            margin-right: 150px;
+            margin-top: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: purple;
+            font-size: 25px;
+        }
+        
+        .calendar {
+            width: 78%;
+            margin: auto;
+            font-size: 13px;
+        }
+        
+        .calendar tr,
+        .calendar td {
+            border: 2px solid plum;
+        }
+        
+        .calendar th {
+            padding: 10px;
+            text-align: center;
+            font-size: 38px;
+            color: purple;
+        }
+        
+        .calendar td {
+            width: 40px;
+            height: 30px;
+            padding: 20px 0px 0px 5px;
+        }
+        
+        .month {
+            font-size: 20px;
+            color: purple;
+        }
+        
+        .date {
+            color: purple;
+        }
+        
+        ul {
+            height: 100%;
+            padding: 0px 5px 0px 20px;
+        }
+        
+        a {
+            color: purple;
+            font-size: 20px;
+            /* text-decoration: none; */
+        }
+        
+        body {
+            padding-bottom: 20px;
+            background-color: ghostwhite;
+        }
+    </style>
+</body>
+
+</html>
