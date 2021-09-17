@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import  django_heroku
 from pathlib import Path
 import os
 
@@ -44,9 +44,10 @@ INSTALLED_APPS = [
     'student',
     'trainer',
     'courses',
-    "eventscalendar",
     "core",
-    'cal'
+    'cal',
+    'api',
+    'rest_framework',
   
 ]
 
@@ -144,3 +145,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static/images/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT="(media)"
+django_heroku.settings(locals())

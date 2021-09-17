@@ -6,8 +6,8 @@ class Student(models.Model):
         (u'M', u'Male'),
         (u'F', u'Female'),
     )
-    first_name=models.CharField(max_length=10,null='true',blank="true")
-    last_name=models.CharField(max_length=10,null="true",blank="true")
+    first_name=models.CharField(max_length=18,null='true',blank="true")
+    last_name=models.CharField(max_length=18,null="true",blank="true")
     age=models.PositiveSmallIntegerField(default=12)
     date_of_birth=models.DateField(null="True",blank="True")
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES, null="True",blank="True")
@@ -26,6 +26,6 @@ class Student(models.Model):
     def __str__(self):
         return self.first_name
     def full_name(self):
-        return f"{self.first_name}{self.last_name}"
+        return f"{self.first_name}  {self.last_name}"
 
    
