@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pacific-atoll-54219.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'schoolsystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
