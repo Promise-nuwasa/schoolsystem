@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pacific-atoll-54219.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'cal',
     'api',
     'rest_framework',
-    'heroku',
   
 ]
 
@@ -90,7 +89,7 @@ WSGI_APPLICATION = 'schoolsystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
@@ -134,7 +133,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
+
 STATICFILES_DIR=[
     BASE_DIR/"static"
 ]
