@@ -22,3 +22,8 @@ class Trainer(models.Model):
         return self.first_name
     def full_name(self):
             return f"{self.first_name}   {self.last_name}"
+    def full_name(self):
+            return f"{self.first_name}  {self.last_name}"
+    # def year_of_birth(self):
+    #     year=datetime.datetime.now().year
+    #     return year-self.age
