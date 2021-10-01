@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import dj_database_url
 import django_heroku
 
 from pathlib import Path
@@ -24,12 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%'
-
+# SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1',  'https://hidden-cove-14420.herokuapp.com']
 
 
 # Application definition
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     'cal',
     'api',
     'rest_framework',
+    'whitenoise.runserver_nostatic',
   
 ]
 
@@ -94,7 +98,8 @@ DATABASES = {
     }
 }
 
-
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -137,6 +142,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR=[
     BASE_DIR/"static"
 ]
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL="/images/"
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/images/')
@@ -146,4 +152,5 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'static/images/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT="(media)"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 django_heroku.settings(locals())
