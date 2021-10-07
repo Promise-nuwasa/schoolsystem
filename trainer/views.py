@@ -17,7 +17,7 @@ def register_trainer(request):
     return render(request,"register_trainer.html",{"form":form})
 def trainer_list(request):
     trainers=Trainer.objects.all()
-    return render(request,"trainer_list.html",{"trainers":trainers})
+    return render(request,"trainer_list.html",{"trainer":trainers})
 def edit_trainer(request,id):
     trainer= Trainer.objects.get(id=id)
     if request.method=='POST':
