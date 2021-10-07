@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://peaceful-spire-19298.herokuapp.com','127.0.0.1']
+    'peaceful-spire-19298.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -90,12 +90,14 @@ WSGI_APPLICATION = 'schoolsystem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd77n4o3fdt40of',
+        'HOST':'ec2-18-214-214-252.compute-1.amazonaws.com',
+        'PORT':'5432',
+        'USER':'bdzbloxtiydiqh',
+        'PASSWORD':'a9f22819b5d5645f2aff7ed71fcd67e4ee509869042b76d195965047b347db01',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
