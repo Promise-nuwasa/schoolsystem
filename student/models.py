@@ -10,7 +10,7 @@ class Student(models.Model):
     last_name=models.TextField(max_length=18,null="true",blank="true")
     age=models.PositiveSmallIntegerField(null="true",blank="true")
     date_of_birth=models.DateField(null="True",blank="True")
-    gender = models.TextField(max_length=1, choices=GENDER_CHOICES, null="True",blank="True")
+    gender = models.TextField(choices=GENDER_CHOICES, null="True",blank="True")
     mentor=models.TextField(max_length=29,null="True",blank="True")
     medical_form=models.FileField(upload_to="images",null="True",blank="True")
     id_number=models.TextField(max_length=20,null="True",blank="True")
