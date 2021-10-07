@@ -78,7 +78,9 @@
             <th>Profile</th>
 
 
-        </tr>{% for trainer in trainers% }
+        </tr>
+
+        {% for trainer in trainers% }
         <tr>
             <td>
                 <img src="{{trainer.image.url}}"></td>
@@ -93,7 +95,9 @@
             <td>{{trainer.lessons_attended}}</td>
             <td><a href="{%url 'edit_trainer' id=trainer.id%}">Edit</a></td>
             <td><a href="{%url 'trainer_profile' id=trainer.id %}">Profile</a></td>
-        </tr>{% endfor%}
+        </tr>
+        {% endfor%}
+
     </table>
 </body>
 
