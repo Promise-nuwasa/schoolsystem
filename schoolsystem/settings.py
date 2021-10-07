@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['peaceful-spire-19298.herokuapp.com']
+ALLOWED_HOSTS = [
+    'peaceful-spire-19298.herokuapp.com']
 
 
 # Application definition
@@ -149,6 +150,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_ROOT="(media)"
 django_heroku.settings(locals())
 
-import dj_database_url 
-prod_db  =  dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(prod_db)
