@@ -9,7 +9,7 @@ class Trainer(models.Model):
     first_name=models.TextField(max_length=10,null='true',blank="true")
     last_name=models.TextField(max_length=10,null='true',blank="true")
     gender = models.TextField(max_length=1, choices=GENDER_CHOICES, null=True)
-    image=models.ImageField(upload_to="images",null='true',blank="true") 
+    image=models.ImageField(upload_to="images/",null='true',blank="true") 
     email=models.EmailField(max_length = 254,null='true',blank="true")
     cv=models.FileField(upload_to='images',null='true',blank="true")
     courses_taught=models.TextField(max_length=30,null='true',blank="true")

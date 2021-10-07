@@ -12,7 +12,7 @@ class Student(models.Model):
     medical_form=models.FileField(default='default.jpg', blank=True, null=True)
     id_number=models.TextField(max_length=20, default=5343, blank=True, null=True)
     passport_number=models.TextField(max_length=20,default=3445, blank=True, null=True)
-    image=models.ImageField(upload_to='images',default='default.jpg', blank=True, null=True)
+    image=models.ImageField(upload_to='images/',default='default.jpg', blank=True, null=True)
     countries=(('Uganda'),("Kenya"),('Tanzania'),('Rwanda'),('Sudan'),('South Sudan'))
     nationality=models.TextField(max_length=15, default='Ugandan', blank=True, null=True)
     class_name=models.TextField(max_length=10, null=True, blank=True)
