@@ -2,31 +2,28 @@ from django.db import models
 import datetime
 # Create your models here.
 class Student(models.Model):
-    GENDER_CHOICES = (
-        (u'M', u'Male'),
-        (u'F', u'Female'),
-    )
-    first_name=models.TextField(max_length=18,null='true',blank="true")
-    last_name=models.TextField(max_length=18,null="true",blank="true")
-    age=models.PositiveSmallIntegerField(null="true",blank="true")
-    date_of_birth=models.DateField(null="True",blank="True")
-    gender = models.TextField(choices=GENDER_CHOICES, null="True",blank="True")
-    mentor=models.TextField(max_length=29,null="True",blank="True")
-    medical_form=models.FileField(upload_to="images",null="True",blank="True")
-    id_number=models.TextField(max_length=20,null="True",blank="True")
-    passport_number=models.TextField(max_length=20,null="True",blank="True")
-    image=models.ImageField(upload_to="images",null="true",blank="true") 
-
-    nationality=models.TextField(max_length=15,null="True",blank="True")
-    class_name=models.TextField(max_length=10,null="True",blank="True")
-    room_number=models.TextField(max_length=5,null="True",blank="True")
-    email=models.EmailField(max_length = 20,null="True",blank="True")
-    county_or_district=models.TextField(max_length=15,null="True",blank="True")
-    big_sister=models.TextField(max_length=20,null="True",blank="True")
+    first_name=models.TextField(max_length=10,blank=True, null=True )
+    last_name=models.TextField(max_length=10, blank=True, null=True)
+    age=models.PositiveSmallIntegerField(blank=True, null=True)
+    date_of_birth=models.DateField( blank=True, null=True)
+    GENDER_CHOICES = (('M', 'Male'), ('F', 'Female'), ('U', 'Unisex/Parody'))
+    gender = models.TextField(max_length=1, choices=GENDER_CHOICES, default='female' , blank=True, null=True)
+    mentor=models.TextField(max_length=29, null=True, blank=True)
+    medical_form=models.FileField(default='default.jpg', blank=True, null=True)
+    id_number=models.TextField(max_length=20, default=5343, blank=True, null=True)
+    passport_number=models.TextField(max_length=20,default=3445, blank=True, null=True)
+    image=models.ImageField(upload_to='images',default='default.jpg', blank=True, null=True)
+    countries=(('Uganda'),("Kenya"),('Tanzania'),('Rwanda'),('Sudan'),('South Sudan'))
+    nationality=models.TextField(max_length=15, default='Ugandan', blank=True, null=True)
+    class_name=models.TextField(max_length=10, null=True, blank=True)
+    room_number=models.TextField(max_length=5, null=True, blank=True)
+    email=models.EmailField(default='anyijukirjanett@gmail.com', blank=True, null=True)
+    county_or_district=models.TextField(max_length=15, blank=True, null=True)
+    big_sister=models.TextField(max_length=20, null=True, blank=True)
+    """How django stores files"""
     def __str__(self):
-        return self.first_name
+       return self.first_name
     def full_name(self):
-        return f"{self.first_name}  {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
     def year_of_birth(self):
-        year=datetime.datetime.now().year
-        return year-self.age
+        return  datetime.datetime.now().year -self.age

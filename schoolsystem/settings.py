@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'peaceful-spire-19298.herokuapp.com']
+    'https://peaceful-spire-19298.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,6 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
