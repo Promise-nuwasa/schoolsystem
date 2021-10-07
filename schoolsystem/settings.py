@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-zrp1%8-^5ahpnins!j$uc=^f^5t+4=srpg*-c74$q+7llx!2!%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://peaceful-spire-19298.herokuapp.com','http://127.0.0.1:8000/']
+    'https://peaceful-spire-19298.herokuapp.com','127.0.0.1']
 
 
 # Application definition
