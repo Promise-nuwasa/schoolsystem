@@ -20,7 +20,7 @@ class Student(models.Model):
     nationality=models.TextField(max_length=15,null="True",blank="True")
     class_name=models.TextField(max_length=10,null="True",blank="True")
     room_number=models.TextField(max_length=5,null="True",blank="True")
-    email=models.EmailField(max_length = 254,null="True",blank="True")
+    email=models.EmailField(max_length = 20,null="True",blank="True")
     county_or_district=models.TextField(max_length=15,null="True",blank="True")
     big_sister=models.TextField(max_length=20,null="True",blank="True")
     def __str__(self):
