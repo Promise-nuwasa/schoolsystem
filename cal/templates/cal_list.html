@@ -9,11 +9,15 @@
 </head>
 
 <body>
+
     <!-- <h1> CodeHive Calender</h1> -->
     {% block content %}
     <div class="clearfix">
         <a class=" btn-info-left" href="{ % url 'cal:calendar' % }?{{ prev_month }}"> Previous Month </a>
         <a class=" btn-info-right" href="{ % url 'cal:calendar' % }?{{ next_month }}"> Next Month </a>
+    </div>
+    <div class="clearfix">
+        <a class="btn info" href="{% url 'event_form' %}"> ADD EVENT </a>
     </div>
     {{ calendar }}` {% endblock %}
     <style>

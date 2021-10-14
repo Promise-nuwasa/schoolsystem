@@ -17,7 +17,7 @@ class Student(models.Model):
     nationality=models.TextField(max_length=15, default='Ugandan', blank=True, null=True)
     class_name=models.TextField(max_length=10, null=True, blank=True)
     room_number=models.TextField(max_length=5, null=True, blank=True)
-    email=models.EmailField(default='anyijukirjanett@gmail.com', blank=True, null=True)
+    email=models.EmailField(max_length=20, blank=True, null=True)
     county_or_district=models.TextField(max_length=15, blank=True, null=True)
     big_sister=models.TextField(max_length=20, null=True, blank=True)
     """How django stores files"""
